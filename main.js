@@ -29,12 +29,25 @@ function getUser(id){
 }
 
 
-// objetos 
+//update
+function updateUser(id, userUpdated){
+    axios.put(`${url}/${id}`, userUpdated)
+    .then(response => console.log(response))
+    .catch(error => console.log(error))
+}
 
+
+// objetos 
 const newUser = {
     name:"Olivia Zars",
     avatar: "https://picsum.photos/200/300",
     city: "Fortaleza"
+}
+
+const userUpdated = {
+    name :"Janaina ",
+    avatar: "https://picsum.photos/200/300",
+    city: "Rio de Janeiro"
 }
 
 
@@ -43,3 +56,4 @@ const newUser = {
 getUsers()
 //addNewUser()
 getUser(1)
+updateUser(1, userUpdated)
