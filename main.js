@@ -28,7 +28,6 @@ function getUser(id){
     .catch(error => console.log(error))
 }
 
-
 //update
 function updateUser(id, userUpdated){
     axios.put(`${url}/${id}`, userUpdated)
@@ -36,6 +35,12 @@ function updateUser(id, userUpdated){
     .catch(error => console.log(error))
 }
 
+//Delete
+function deleteUser(id){
+    axios.put(`${url}/${id}`)
+    .then(response => console.log(response))
+    .catch(error => console.log(error))
+}
 
 // objetos 
 const newUser = {
@@ -50,10 +55,9 @@ const userUpdated = {
     city: "Rio de Janeiro"
 }
 
-
 //chamadas das apis
-
+deleteUser(4)
 getUsers()
 //addNewUser()
 getUser(1)
-updateUser(1, userUpdated)
+//updateUser(1, userUpdated)
